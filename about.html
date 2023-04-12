@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BatiForce</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+
+  <style>
+  .nav-item:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+
+  .nav-link:focus, .nav-link:hover {
+    border: 1px solid rgba(128, 128, 128, 0.5);
+  }
+
+  .navbar-custom {
+    background-color: #333;
+  }
+
+  .footer {
+    background-color: #333;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content-wrap {
+    flex: 1;
+    margin-bottom: 50px;
+  }
+
+  .submit-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .btn-submit {
+    font-weight: bold;
+  }
+  .contact-form-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px; /* Modifiez cette valeur pour ajuster la largeur du formulaire */
+    margin: 50px auto;
+  }
+
+  .form-control {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="logo_blanc.png" alt="Logo" style="max-height: 50px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Offres.html">Offres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">A propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+  <main class="content-wrap">
+    
+
+    <section id="apropos">
+      <div class="container">
+        <h1>À propos de nous</h1>
+        <p>
+Notre cabinet de recrutement est spécialisé dans la fourniture de main-d'œuvre qualifiée roumaine pour le secteur du bâtiment en France. Nous offrons des services de recrutement adaptés à vos besoins, garantissant une adéquation parfaite entre les compétences de nos candidats et les exigences de votre entreprise.
+</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h1 class="contact-title">Prêt à donner vie à vos projets de construction ? Contactez-nous dès aujourd'hui !</h1>
+        
+        <div class="contact-form-container">
+        <form action="https://formspree.io/f/mdovpezo" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Adresse e-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre e-mail" required>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Sujet</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Entrez le sujet" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="6" placeholder="Entrez votre message" required></textarea>
+
+          <div class="submit-button-container">
+      <button type="submit" class="btn btn-primary btn-submit">Envoyer</button>
+    </div>
+        </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 BatiForce - Tous droits réservés.</p>
+    </div
+  </footer>
+</body>
+</html>
