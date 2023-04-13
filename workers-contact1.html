@@ -97,10 +97,8 @@
 
     <section id="apropos">
       <div class="container">
-        <h1 class="text-center my-5">À propos de nous</h1>
-        <p>
-Notre cabinet de recrutement est spécialisé dans la fourniture de main-d'œuvre qualifiée roumaine pour le secteur du bâtiment en France. Nous offrons des services de recrutement adaptés à vos besoins, garantissant une adéquation parfaite entre les compétences de nos candidats et les exigences de votre entreprise.
-</p>
+        <h1 class="text-center my-4">Postulez chez BatiForce</h1>
+       
       </div>
     </section>
 
@@ -109,27 +107,36 @@ Notre cabinet de recrutement est spécialisé dans la fourniture de main-d'œuvr
         <h1 class="text-center my-4">Prêt à donner vie à vos projets de construction ? Contactez-nous dès aujourd'hui !</h1>
         
         <div class="contact-form-container">
-        <form action="https://formspree.io/f/mdovpezo" method="POST">
-          <div class="mb-3">
-            <label for="name" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Adresse e-mail</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre e-mail" required>
-          </div>
-          <div class="mb-3">
-            <label for="subject" class="form-label">Sujet</label>
-            <input type="text" class="form-control" id="subject" name="subject" placeholder="Entrez le sujet" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="6" placeholder="Entrez votre message" required></textarea>
-
-          <div class="submit-button-container">
-      <button type="submit" class="btn btn-primary btn-submit">Envoyer</button>
+       <form id="worker-application-form" action="https://formspree.io/f/mdovpezo" method="POST" enctype="multipart/form-data" class="rounded p-4 bg-light">
+      <div class="mb-3">
+        <label for="workerName" class="form-label">Nom complet</label>
+        <input type="text" class="form-control" id="workerName" name="workerName" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="workerEmail" name="workerEmail" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerPhone" class="form-label">Numéro de téléphone</label>
+        <input type="tel" class="form-control" id="workerPhone" name="workerPhone" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerExperience" class="form-label">Expérience professionnelle</label>
+        <textarea class="form-control" id="workerExperience" name="workerExperience" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="workerSkills" class="form-label">Compétences</label>
+        <input type="text" class="form-control" id="workerSkills" name="workerSkills" placeholder="Ex: maçonnerie, plomberie, électricité" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerPhoto" class="form-label">Photo (facultatif)</label>
+        <input type="file" class="form-control" id="workerPhoto" name="workerPhoto">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg" style="font-weight: bold;">Envoyer</button>
+      </div>
     </div>
-        </form>
+    </form>
 
         </div>
       </div>
