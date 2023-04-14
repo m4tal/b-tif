@@ -9,13 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
   <style>
   .nav-item:hover {
     background-color: rgba(128, 128, 128, 0.1);
@@ -158,20 +151,10 @@
         <label for="workerPostalCode" class="form-label" data-lang="postalcode">Code Postal (Optionel)</label>
         <input type="tel" class="form-control" id="workerPostalCode" name="workerPostalCode">
       </div>
-
-<div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="postalCode" data-lang="postalcode">Code postal (Optionel)</label>
-    <input type="text" class="form-control" id="postalCode" name="workerPostalCode" placeholder="Code Postal">
-  </div>
-  <div class="form-group col-md-6">
-    <label for="city" data-lang="city">Ville</label>
-    <input type="text" class="form-control" id="city" name="workercity" placeholder="Ville">
-  </div>
-</div>
-
-
-
+      <div class="mb-3">
+        <label for="workerCity" class="form-label" data-lang="workercity">Ville (Optionel)</label>
+        <input type="text" class="form-control" id="workerCity" name="workercity">
+      </div>
       <div class="mb-3">
         <label for="workerExperience" class="form-label" data-lang="profexp">Expérience professionnelle</label>
         <textarea class="form-control" id="workerExperience" name="workerExperience" rows="3" required></textarea>
@@ -219,12 +202,14 @@
     "FullName": "Full Name",
     "Email": "E-Mail",
     "telephone": "Phone number",
-    "postalcode": "post code (Optional)",
+    "postalcode": "Post code (Optional)",
+    "workercity": "City (Optional)",
     "profexp": "Professional experience",
     "exp": "Skills",
     "Exemples": "Ex: masonry, plumbing, electricity",
     "photo": "Picture",
     "envoyer": "Send",
+
 
     },
 
@@ -234,6 +219,7 @@
     "Email": "E-Mail",
     "telephone": "Telefon",
     "postalcode": "Cod Postal (Opțional)",
+    "workercity": "Oraș (Opțional)",
     "profexp": "Experienta profesionala",
     "exp": "Experienţă",
     "Exemples": "Ex: zidarie, instalatii sanitare, electricitate",
@@ -247,6 +233,7 @@
     "Email": "Email",
     "telephone": "Numéro de téléphone",
     "postalcode": "Code Postal (Optionel)",
+    "workercity": "Ville (Optionel)",
     "profexp": "Expérience professionnelle",
     "exp": "Compétences",
     "Exemples": "Ex: maçonnerie, plomberie, électricité",
