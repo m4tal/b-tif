@@ -190,7 +190,7 @@
 <script>
   const apiKey = "3fe28dca95ea4546953762c4e65afab1";
 
-  const cityInput = document.getElementById("city");
+  const cityInput = document.getElementById("workerCity");
   cityInput.addEventListener("input", async () => {
     const query = cityInput.value;
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${apiKey}&language=fr&pretty=1&countrycode=fr,ro&limit=1`;
@@ -202,7 +202,7 @@
       if (data.results.length > 0) {
         const postal_code = data.results[0].components.postcode;
         if (postal_code) {
-          document.getElementById("postalCode").value = postal_code;
+          document.getElementById("workerPostalCode").value = postal_code;
         }
       }
     } catch (error) {
