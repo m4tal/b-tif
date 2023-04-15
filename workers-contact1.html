@@ -188,6 +188,31 @@
 </body>
 
 <script>
+  const apiKey = "3fe28dca95ea4546953762c4e65afab1";
+
+  const cityInput = document.getElementById("city");
+  cityInput.addEventListener("input", async () => {
+    const query = cityInput.value;
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${apiKey}&language=fr&pretty=1&countrycode=fr,ro&limit=1`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.results.length > 0) {
+        const postal_code = data.results[0].components.postcode;
+        if (postal_code) {
+          document.getElementById("postalCode").value = postal_code;
+        }
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération des données", error);
+    }
+  });
+</script>
+
+
+<script>
     grecaptcha.ready(function() {
         grecaptcha.execute('6Lf6fYIlAAAAACbV656B6xYTtWAKoGMo0NGDN0DN', {action: 'submit'}).then(function(token) {
             document.getElementById('g-recaptcha-response').value = token;
