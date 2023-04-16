@@ -186,28 +186,56 @@
     </div
   </footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/@tarekraafat/autocomplete.js@8.4.0/dist/js/autoComplete.min.js"></script>
 
 <script>
-  const apiKey = "3fe28dca95ea4546953762c4e65afab1";
-
-  const cityInput = document.getElementById("workerCity");
-  cityInput.addEventListener("input", async () => {
-    const query = cityInput.value;
-    const url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${apiKey}&language=fr&pretty=1&countrycode=fr,ro&limit=1`;
+  // Fonction pour récupérer les données des villes et des codes postaux
+  async function fetchCityData(query) {
+    const apiKey = "3fe28dca95ea4546953762c4e65afab1";
+    const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(query)}&key=${apiKey}&language=fr&countrycode=fr,ro&pretty=1&no_annotations=1&limit=5`;
 
     try {
-      const response = await fetch(url);
+      const response = await fetch(apiUrl);
       const data = await response.json();
-      
-      if (data.results.length > 0) {
-        const postal_code = data.results[0].components.postcode;
-        if (postal_code) {
-          document.getElementById("workerPostalCode").value = postal_code;
-        }
-      }
+      return data.results.map((result) => ({
+        name: result.formatted,
+        code: result.components.postcode,
+      }));
     } catch (error) {
-      console.error("Erreur lors de la récupération des données", error);
+      console.error("Erreur lors de la récupération des données de la ville:", error);
+      return [];
     }
+  }
+
+  // Initialisation de l'autocomplétion pour le champ "Ville"
+  const cityInput = document.querySelector("#workerCity");
+  new autoComplete({
+    selector: cityInput,
+    placeHolder: "Tapez le nom de votre ville",
+    data: {
+      src: async () => {
+        const query = cityInput.value;
+        const cityData = await fetchCityData(query);
+        return cityData;
+      },
+      key: ["name"],
+      cache: false,
+    },
+    resultItem: {
+      content: (data, element) => {
+        element.innerHTML = data.match;
+      },
+    },
+    events: {
+      input: {
+        selection: (event) => {
+          const selectedCity = event.detail.selection.value;
+          cityInput.value = selectedCity.name;
+          document.querySelector("#workerPostalCode").value = selectedCity.code;
+        },
+      },
+    },
   });
 </script>
 
