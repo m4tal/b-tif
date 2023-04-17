@@ -9,6 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@latest/dist/js/autoComplete.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <style>
   .nav-item:hover {
@@ -191,54 +193,33 @@
 
 
 <script>
-  // Fonction pour récupérer les données des villes et des codes postaux
-  async function fetchCityData(query) {
-    const apiKey = "3fe28dca95ea4546953762c4e65afab1";
-    const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(query)}&key=${apiKey}&language=fr&countrycode=fr,ro&pretty=1&no_annotations=1&limit=5`;
+$(function() {
+  function searchCities(request, response) {
+    const apiKey = "3fe28dca95ea4546953762c4e65afab1"; // Remplacez par votre clé API OpenCageData
+    const query = encodeURIComponent(request.term);
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${apiKey}&language=fr&countrycode=fr,ro&limit=10`;
 
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      return data.results.map((result) => ({
-        name: result.formatted,
-        code: result.components.postcode,
-      }));
-    } catch (error) {
-      console.error("Erreur lors de la récupération des données de la ville:", error);
-      return [];
-    }
+    $.getJSON(url, function(data) {
+      const suggestions = data.results.map(function(result) {
+        return {
+          label: result.formatted,
+          postalCode: result.components.postcode,
+        };
+      });
+      response(suggestions);
+    });
   }
 
-  // Initialisation de l'autocomplétion pour le champ "Ville"
-  const cityInput = document.querySelector("#workerCity");
-  new autoComplete({
-    selector: cityInput,
-    placeHolder: "Tapez le nom de votre ville",
-    data: {
-      src: async () => {
-        const query = cityInput.value;
-        const cityData = await fetchCityData(query);
-        return cityData;
-      },
-      key: ["name"],
-      cache: false,
-    },
-    resultItem: {
-      content: (data, element) => {
-        element.innerHTML = data.match;
-      },
-    },
-    events: {
-      input: {
-        selection: (event) => {
-          const selectedCity = event.detail.selection.value;
-          cityInput.value = selectedCity.name;
-          document.querySelector("#workerPostalCode").value = selectedCity.code;
-        },
-      },
+  $("#cityworkers").autocomplete({
+    source: searchCities,
+    minLength: 2,
+    select: function(event, ui) {
+      $("#postalcodeworkers").val(ui.item.postalCode);
     },
   });
+});
 </script>
+
 
 
 <script>
