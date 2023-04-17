@@ -210,11 +210,11 @@ $(function() {
     });
   }
 
-  $("#cityworkers").autocomplete({
+  $("#workerCity").autocomplete({
     source: searchCities,
     minLength: 2,
     select: function(event, ui) {
-      $("#postalcodeworkers").val(ui.item.postalCode);
+      $("#workerPostalCode").val(ui.item.postalCode);
     },
   });
 });
