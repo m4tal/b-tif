@@ -206,6 +206,7 @@ $(function() {
         return {
           label: result.formatted,
           postalCode: result.components.postcode,
+          region: result.components.state,
         };
       });
       response(suggestions);
