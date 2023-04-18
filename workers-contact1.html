@@ -154,6 +154,10 @@
         <input type="text" class="form-control" id="workerCity" name="workercity">
       </div>
       <div class="mb-3">
+        <label for="workerRegion" class="form-label" data-lang="workerregion">Region (Optionel)</label>
+        <input type="text" class="form-control" id="workerRegion" name="workerRegion">
+      </div>
+      <div class="mb-3">
         <label for="workerPostalCode" class="form-label" data-lang="postalcode">Code Postal (Optionel)</label>
         <input type="tel" class="form-control" id="workerPostalCode" name="workerPostalCode" readonly>
       </div>
@@ -213,6 +217,7 @@ $(function() {
     minLength: 2,
     select: function(event, ui) {
       $("#workerPostalCode").val(ui.item.postalCode);
+      $("#workerRegion").val(ui.item.region);
     },
   });
 });
