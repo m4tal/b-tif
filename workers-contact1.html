@@ -87,8 +87,9 @@
   }
  }
 
-
 .navbar-toggler-icon {
+  width: 24px;
+  height: 3px;
   background-color: #fff;
 }
 
@@ -96,10 +97,19 @@
 .navbar-toggler-icon::after {
   content: '';
   display: block;
-  width: 100%;
+  width: 24px;
   height: 3px;
   background-color: #fff;
 }
+
+.navbar-toggler-icon::before {
+  margin-top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  margin-top: 8px;
+}
+
 
 
 </style>
