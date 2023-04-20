@@ -87,12 +87,18 @@
   }
  }
 
+.navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
 .navbar-toggler-icon {
-  position: relative;
+  display: inline-block;
   width: 24px;
   height: 3px;
   background-color: #fff;
   transition: all 0.3s;
+  position: relative;
 }
 
 .navbar-toggler-icon::before,
@@ -106,11 +112,11 @@
 }
 
 .navbar-toggler-icon::before {
-  transform: translateY(-8px);
+  top: -8px;
 }
 
 .navbar-toggler-icon::after {
-  transform: translateY(8px);
+  bottom: -8px;
 }
 
 .change .navbar-toggler-icon {
@@ -118,11 +124,13 @@
 }
 
 .change .navbar-toggler-icon::before {
-  transform: translateY(0) rotate(45deg);
+  top: 0;
+  transform: rotate(45deg);
 }
 
 .change .navbar-toggler-icon::after {
-  transform: translateY(0) rotate(-45deg);
+  bottom: 0;
+  transform: rotate(-45deg);
 }
 
 
