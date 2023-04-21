@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Tutoriel Menu Responsive avec Burger Animé (HTML, CSS, JAVASCRIPT)</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>BatiForce</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+</head>
+<body>
+  <nav class="navbar dark-mode" role="navigation">
+    <div class="navbar__logo" href="#"><img src="logo_blanc.png" alt="Logo" style="max-height: 50px;"></div>    
+    <ul class="navbar__links">
+      <li class="navbar__link first"><a href="#">Accueil</a></li>
+      <li class="navbar__link second"><a href="#section2">Services</a></li>
+      <li class="navbar__link third"><a href="#">A propos</a></li>
+    </ul>   
+    <button class="burger">
+      <span class="bar"></span>  
+    </button>   
+  </nav>
+  <main class="main-content">
+ <main class="content-wrap">
+   <div class="language-selector">
+    <button class="language-btn" data-switch-lang="en">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png" alt="English" width="30" height="20" />
+ </button>
+ <button class="language-btn" data-switch-lang="ro">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/2560px-Flag_of_Romania.svg.png" alt="Română" width="30" height="20" />
+ </button>
+ <button class="language-btn" data-switch-lang="fr">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png" alt="Français" width="30" height="20" />
+ </button>
+</div>
+    <section id="apropos">
+      <div class="container-mt5">
+        <h1 class="text-center my-4" data-lang="Title">Postulez chez BatiForce</h1>
+       
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        
+        <div class="contact-form-container">
+       <form id="worker-application-form" action="https://formspree.io/f/mdovpezo" method="POST" enctype="multipart/form-data" class="rounded p-4 bg-light">
+      <div class="mb-3">
+        <label for="workerName" class="form-label" data-lang="FullName">Nom complet</label>
+        <input type="text" class="form-control" id="workerName" name="workerName" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerEmail" class="form-label" data-lang="Email">Email</label>
+        <input type="email" class="form-control" id="workerEmail" name="workerEmail" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerPhone" class="form-label" data-lang="telephone">Numéro de téléphone</label>
+        <input type="tel" class="form-control" id="workerPhone" name="workerPhone" required>
+      </div>
+      <div class="mb-3">
+        <label for="workerCity" class="form-label" data-lang="workercity">Ville (Optionel)</label>
+        <input type="text" class="form-control" id="workerCity" name="workercity">
+      </div>
+      <div class="mb-3">
+        <label for="workerRegion" class="form-label" data-lang="workerregion">Region (Optionel)</label>
+        <input type="text" class="form-control" id="workerRegion" name="workerRegion" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="workerPostalCode" class="form-label" data-lang="postalcode">Code Postal (Optionel)</label>
+        <input type="tel" class="form-control" id="workerPostalCode" name="workerPostalCode" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="workerExperience" class="form-label" data-lang="profexp">Expérience professionnelle</label>
+        <textarea class="form-control" id="workerExperience" name="workerExperience" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="workerSkills" class="form-label" data-lang="exp">Compétences</label>
+        <input type="text" class="form-control" id="workerSkills" name="workerSkills" placeholder="Ex: maçonnerie, plomberie, électricité" data-lang="Exemples">
+      </div>
+      <div class="mb-3">
+        <label for="workerPhoto" class="form-label" data-lang="photo">Photo (facultatif)</label>
+        <input type="file" class="form-control" id="workerPhoto" name="workerPhoto">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg" style="font-weight: bold;" data-lang="envoyer">Envoyer</button>
+      </div>
+    </div>
+    </form>
+
+<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 BatiForce - Tous droits réservés.</p>
+    </div
+  </footer>
+</body>
+
+<script>
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+  this.classList.toggle('change');
+});
+</script>
+
+<script>
+$(function() {
+  function searchCities(request, response) {
+    const apiKey = "3fe28dca95ea4546953762c4e65afab1"; // Remplacez par votre clé API OpenCageData
+    const query = encodeURIComponent(request.term);
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${apiKey}&language=fr&countrycode=fr,ro&limit=10`;
+
+    $.getJSON(url, function(data) {
+      const suggestions = data.results.map(function(result) {
+        return {
+          label: result.formatted,
+          postalCode: result.components.postcode,
+          region: result.components.state,
+        };
+      });
+      response(suggestions);
+    });
+  }
+
+  $("#workerCity").autocomplete({
+    source: searchCities,
+    minLength: 2,
+    select: function(event, ui) {
+      $("#workerPostalCode").val(ui.item.postalCode);
+      $("#workerRegion").val(ui.item.region);
+    },
+  });
+});
+</script>
+
+
+
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Lf6fYIlAAAAACbV656B6xYTtWAKoGMo0NGDN0DN', {action: 'submit'}).then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
+</script>
+
+<script>
+  const translations = {
+        "en": {
+      "Title": "Apply to BatiForce",
+    "FullName": "Full Name",
+    "Email": "E-Mail",
+    "telephone": "Phone number",
+    "workercity": "City (Optional)",
+    "workerregion": "Region (Optional)",
+    "postalcode": "Post code (Optional)",
+    "profexp": "Professional experience",
+    "exp": "Skills",
+    "Exemples": "Ex: masonry, plumbing, electricity",
+    "photo": "Picture",
+    "envoyer": "Send",
+
+
+    },
+
+"ro": {
+      "Title": "Aplicați la BatiForce",
+    "FullName": "Numele complet",
+    "Email": "E-Mail",
+    "telephone": "Telefon",
+    "workercity": "Oraș (Opțional)",
+    "workerregion": "Regiune (Opțional)",
+    "postalcode": "Cod Postal (Opțional)",
+    "profexp": "Experienta profesionala",
+    "exp": "Experienţă",
+    "Exemples": "Ex: zidarie, instalatii sanitare, electricitate",
+    "photo": "Fotografie",
+    "envoyer": "Trimite",
+      
+   },
+    "fr": {
+"Title": "Postulez chez BatiForce",
+    "FullName": "Nom Complet",
+    "Email": "Email",
+    "telephone": "Numéro de téléphone",
+    "workercity": "Ville (Optionel)",
+    "workerregion": "Région (Optionel)",
+    "postalcode": "Code Postal (Optionel)",
+    "profexp": "Expérience professionnelle",
+    "exp": "Compétences",
+    "Exemples": "Ex: maçonnerie, plomberie, électricité",
+    "photo": "Photo",
+    "envoyer": "Envoyer",
+  
+    }
+  };
+
+ function switchLanguage(lang) {
+  const elements = document.querySelectorAll("[data-lang]");
+  elements.forEach((element) => {
+    const key = element.getAttribute("data-lang");
+    if (translations[lang] && translations[lang][key]) {
+      if (element.hasAttribute("placeholder")) {
+        element.placeholder = translations[lang][key];
+      } else {
+        element.innerHTML = translations[lang][key];
+      }
+    }
+  });
+}
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const languageButtons = document.querySelectorAll("[data-switch-lang]");
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.getAttribute("data-switch-lang");
+        switchLanguage(lang);
+      });
+    });
+  });
+
+</script>
+
+  
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
