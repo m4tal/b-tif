@@ -209,7 +209,9 @@ body {
   }
 
   .submit-button-container {
-    text-align: center;
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
    
   }
   .btn-submit {
