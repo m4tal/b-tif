@@ -324,25 +324,27 @@ body {
  overflow: hidden;
  margin: 0px;
  }
- .top-to-bottom {
- animation: 0.4s top-to-bottom forwards;
+
+.bottom-to-up {
+ animation: 0.4s bottom-to-up forwards;
  font-size: 24px;
  font-weight: 600;
  letter-spacing: -.005em;
- font-family:
- "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+ font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
  color: rgba(0,0,0,0.8);
  text-align: left;
- } 
-@keyframes top-to-bottom {
+ }
+ @keyframes bottom-to-up {
  from {
- transform: translateY(-48px);
+ transform: translateY(48px);
  }
  to {
- transform: translateY(0);
+ transform: translateX(0);
  }
  }
- </style>
+
+
+
 
 
 
