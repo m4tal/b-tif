@@ -95,14 +95,14 @@
         <label for="workerPhoto" class="form-label" data-lang="photo">Photo (facultatif)</label>
         <input type="file" class="form-control" id="workerPhoto" name="workerPhoto">
       </div>
-        <p>Quand voulez-vous être contacté ?</p>
+        <p data-lang="ContactTime">Quand voulez-vous être contacté ?</p>
   <div>
-    <input type="radio" id="morning" name="contact_time" value="morning" required>
-    <label for="morning">Le matin</label>
+    <input type="radio" id="morning" name="WorkerContactTime" value="morning" required>
+    <label for="morning" data-lang="morning">Le matin</label>
   </div>
   <div>
-    <input type="radio" id="afternoon" name="contact_time" value="afternoon">
-    <label for="afternoon">L'après-midi</label>
+    <input type="radio" id="afternoon" name="WorkerContactTime" value="afternoon">
+    <label for="afternoon" data-lang="afternoon">L'après-midi</label>
   </div>
 <div class="submit-button-container">
         <button type="submit" class="btn-submit" data-lang="envoyer">Envoyer</button>
@@ -184,6 +184,9 @@ $(function() {
     "exp": "Skills",
     "Exemples": "Ex: masonry, plumbing, electricity",
     "photo": "Picture",
+    "ContactTime": "When do you want to be contacted?",
+    "morning": "The morning",
+    "afternoon": "The afternoon",   
     "envoyer": "Send",
 
 
@@ -201,6 +204,9 @@ $(function() {
     "exp": "Experienţă",
     "Exemples": "Ex: zidarie, instalatii sanitare, electricitate",
     "photo": "Fotografie",
+    "ContactTime": "Când vrei să fii contactat?",
+    "morning": "Dimineata",
+    "afternoon": "După-amiaza",
     "envoyer": "Trimite",
       
    },
@@ -216,6 +222,9 @@ $(function() {
     "exp": "Compétences",
     "Exemples": "Ex: maçonnerie, plomberie, électricité",
     "photo": "Photo",
+    "ContactTime": "Quand voulez-vous être contacté ?",
+    "morning": "Le matin",
+    "afternoon": "L'après-midi",
     "envoyer": "Envoyer",
   
     }
