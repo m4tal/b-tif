@@ -96,9 +96,14 @@
         <input type="file" class="form-control" id="workerPhoto" name="workerPhoto">
       </div>
         <p data-lang="ContactTime">Quand voulez-vous être contacté ?</p>
-        
-  
-  
+        <div class="radio-group">
+    <input type="radio" id="morning" name="workerContactTime" value="Morning" required>
+    <label class="radio-button" for="morning" data-lang="morning">Le matin</label>
+  </div>
+  <div class="radio-group">
+    <input type="radio" id="afternoon" name="workerContactTime" value="Afternoon">
+    <label class="radio-button" for="afternoon" data-lang="afternoon">L'après-midi</label>
+  </div>
 <div class="submit-button-container">
         <button type="submit" class="btn-submit" data-lang="envoyer">Envoyer</button>
         </div>
