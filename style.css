@@ -279,126 +279,70 @@ body {
   /* Autres propriétés CSS ici, si nécessaire */
 }
 
-.control {
-    font-family: arial;
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 5px;
-    padding-top: 3px;
-    cursor: pointer;
-    font-size: 16px;
-}
-    .control input {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
-.control_indicator {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background: #e6e6e6;
-    border: 0px solid #000000;
-    border-radius: undefinedpx;
-}
-.control:hover input ~ .control_indicator,
-.control input:focus ~ .control_indicator {
-    background: #cccccc;
-}
 
-.control input:checked ~ .control_indicator {
-    background: #2aa1c0;
+.radio-button{
+	width: 100%;
+	display:flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+	margin: 10px;
+	font-size: 14px;
+	cursor: pointer;
 }
-.control:hover input:not([disabled]):checked ~ .control_indicator,
-.control input:checked:focus ~ .control_indicator {
-    background: #0e6647d;
+.radio-button input{
+	opacity:0;
+	width: 0;
+	height: 0;
 }
-.control input:disabled ~ .control_indicator {
-    background: #e6e6e6;
-    opacity: 0.6;
-    pointer-events: none;
+.radio-button span{
+	width: 24px;
+	height: 24px;
+	position: relative;
+	margin-right: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 47%;
+	background-color: #bdbdbd;
 }
-.control_indicator:after {
-    box-sizing: unset;
-    content: '';
-    position: absolute;
-    display: none;
+.radio-button input:checked + span:after{
+	content: "";
+	display: block;
+	width: 8px;
+  height: 8px;
+	border-radius: 47%;
+	background-color: #ffffff;
 }
-.control input:checked ~ .control_indicator:after {
-    display: block;
+.radio-button input:checked + span {
+	background-color: #0c49e3;
 }
-.control-radio .control_indicator {
-    border-radius: 50%;
+.radio-button input:disabled + span {
+	background-color: #e5e5e5;
 }
-
-.control-radio .control_indicator:after {
-    left: 7px;
-    top: 7px;
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    background: #ffffff;
-    transition: background 250ms;
+.radio-button span:before{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	border-radius: 47%;
+	background-color: #0a1fde;
 }
-.control-radio input:disabled ~ .control_indicator:after {
-    background: #7b7b7b;
-}.control-radio .control_indicator::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4.5rem;
-    height: 4.5rem;
-    margin-left: -1.3rem;
-    margin-top: -1.3rem;
-    background: #2aa1c0;
-    border-radius: 3rem;
-    opacity: 0.6;
-    z-index: 99999;
-    transform: scale(0);
+.radio-button input:checked + span:before {
+	animation: growAndFade 0.2s ease-out;
+} 
+@keyframes growAndFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
 }
-@keyframes s-ripple {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    20% {
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0.01;
-        transform: scale(1);
-    }
-}
-@keyframes s-ripple-dup {
-   0% {
-       transform: scale(0);
-    }
-   30% {
-        transform: scale(1);
-    }
-    60% {
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-}
-.control-radio input + .control_indicator::before {
-    animation: s-ripple 250ms ease-out;
-}
-.control-radio input:checked + .control_indicator::before {
-    animation-name: s-ripple-dup;
-}
-
-
-
-
-
-
-
